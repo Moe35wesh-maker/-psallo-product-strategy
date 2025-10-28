@@ -357,7 +357,7 @@ This case study showcases:
 
 **Moses Ondeche**  
 Product Manager | B2B SaaS Strategy  
-[[LinkedIn](https://www.linkedin.com/in/moses-ondeche-3a0a5835/ )](#) | [Portfolio](#) | [Email](mailto:moe35wesh@gmail.com)
+[[LinkedIn](https://www.linkedin.com/in/moses-ondeche-3a0a5835/ )](#) | [Portfolio](#) | [Email](moe35wesh@gmail.com)
 
 ---
 
