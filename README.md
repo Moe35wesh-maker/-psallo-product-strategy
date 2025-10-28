@@ -355,9 +355,9 @@ This case study showcases:
 
 ## 📧 Contact
 
-**Moses Ondeche**  
+**Moses [Your Last Name]**  
 Product Manager | B2B SaaS Strategy  
-[[LinkedIn](https://www.linkedin.com/in/moses-ondeche-3a0a5835/ )](#) | [Portfolio](#) | [Email](moe35wesh@gmail.com)
+[LinkedIn](#) | [Portfolio](#) | [Email](mailto:your.email@example.com)
 
 ---
 
