@@ -97,177 +97,470 @@
 
         .phone-mockup {
             width: 100%;
-            max-width: 375px;
+            max-width: 390px;
             margin: 0 auto;
             background: #1a1a1a;
-            border-radius: 40px;
-            padding: 15px;
+            border-radius: 45px;
+            padding: 12px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             position: relative;
         }
 
         .phone-notch {
             width: 150px;
-            height: 25px;
-            background: #1a1a1a;
+            height: 30px;
+            background: #000;
             border-radius: 0 0 20px 20px;
-            margin: 0 auto 10px;
+            margin: 0 auto 8px;
+            position: relative;
         }
 
         .phone-screen {
-            background: white;
-            border-radius: 25px;
+            background: #000;
+            border-radius: 35px;
             overflow: hidden;
-            min-height: 650px;
+            min-height: 750px;
         }
 
         .screen-content {
-            padding: 20px;
+            height: 100%;
+            overflow-y: auto;
         }
 
+        /* Before Screen - Current Psallo interface */
         .before-screen {
-            font-size: 11px;
-            overflow-x: auto;
-        }
-
-        .before-screen .header-bar {
-            background: #667eea;
+            background: #000;
             color: white;
+        }
+
+        .before-screen .nav-bar {
+            background: #000;
             padding: 15px;
-            margin: -20px -20px 20px -20px;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .before-screen .content-item {
-            background: #f5f5f5;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            font-size: 10px;
-            overflow: hidden;
-        }
-
-        .before-screen .tiny-text {
-            font-size: 8px;
-            line-height: 1.2;
-            color: #666;
-        }
-
-        .before-screen .cramped {
             display: flex;
-            gap: 5px;
-            margin-top: 10px;
+            justify-content: space-around;
+            border-bottom: 1px solid #222;
         }
 
-        .before-screen .cramped button {
-            flex: 1;
-            padding: 8px 5px;
-            font-size: 9px;
-            background: #667eea;
+        .before-screen .nav-icon {
+            font-size: 24px;
             color: white;
-            border: none;
-            border-radius: 4px;
         }
 
-        .problem-badge {
-            background: #8b5fbf;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 11px;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .after-screen .header-bar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .before-screen .song-header {
+            background: #1a1a1a;
+            margin: 15px;
             padding: 20px;
-            margin: -20px -20px 20px -20px;
+            border-radius: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .before-screen .album-art {
+            width: 60px;
+            height: 60px;
+            background: #fce4ec;
+            border-radius: 10px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
 
-        .after-screen .header-title {
-            font-size: 24px;
+        .before-screen .album-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .before-screen .song-info {
+            flex: 1;
+        }
+
+        .before-screen .song-title {
+            font-size: 18px;
             font-weight: 700;
+            margin-bottom: 5px;
         }
 
-        .after-screen .icon-btn {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
+        .before-screen .song-artist {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .before-screen .menu-icon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .before-screen .player-bar {
+            padding: 20px 15px;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .before-screen .play-btn {
+            width: 50px;
+            height: 50px;
+            background: #555;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
-        }
-
-        .after-screen .song-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
-        .after-screen .song-title {
-            font-size: 20px;
-            font-weight: 700;
+        .before-screen .time-info {
+            flex: 1;
+        }
+
+        .before-screen .time-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #666;
             margin-bottom: 8px;
         }
 
-        .after-screen .song-artist {
-            font-size: 14px;
-            opacity: 0.9;
-            margin-bottom: 15px;
+        .before-screen .progress-bar {
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            position: relative;
         }
 
-        .after-screen .action-buttons {
+        .before-screen .settings-icon {
+            width: 44px;
+            height: 44px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #999;
+        }
+
+        .before-screen .tabs {
+            display: flex;
+            padding: 0 15px;
+            gap: 20px;
+            border-bottom: 1px solid #222;
+            overflow-x: auto;
+        }
+
+        .before-screen .tab {
+            padding: 15px 0;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .before-screen .tab.active {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        .before-screen .key-controls {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .before-screen .key-dropdown {
+            padding: 12px 20px;
+            background: #2a2a2a;
+            border-radius: 25px;
+            font-size: 14px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .before-screen .capo-btn {
+            padding: 12px 24px;
+            background: white;
+            color: #000;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .before-screen .sharp-btn {
+            font-size: 20px;
+            color: white;
+            padding: 8px;
+        }
+
+        .before-screen .song-meta {
+            padding: 12px 15px;
+            font-size: 13px;
+            color: #999;
+            display: flex;
+            gap: 20px;
+        }
+
+        .before-screen .download-section {
+            padding: 0 15px 20px;
+        }
+
+        .before-screen .download-btn {
+            width: 100%;
+            padding: 15px;
+            background: #2a2a2a;
+            border-radius: 25px;
+            font-size: 16px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 10px;
         }
 
-        .after-screen .action-btn {
-            flex: 1;
-            padding: 12px;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-size: 13px;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
+        .before-screen .chord-cards {
+            padding: 0 15px 20px;
         }
 
-        .after-screen .quick-access {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .after-screen .quick-card {
-            background: #f8f9ff;
+        .before-screen .chord-card {
+            background: white;
+            color: #000;
             padding: 20px;
-            border-radius: 12px;
-            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 15px;
         }
 
-        .after-screen .quick-icon {
-            font-size: 32px;
-            margin-bottom: 8px;
+        .before-screen .section-header {
+            font-size: 13px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
         }
 
-        .after-screen .quick-label {
-            font-size: 14px;
-            color: #667eea;
+        .before-screen .chord-lines {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .before-screen .chord {
+            color: #000;
+            font-weight: 700;
+        }
+
+        .problem-badge {
+            background: #8b5fbf;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 9px;
+            display: inline-block;
+            margin: 4px;
             font-weight: 600;
+        }
+
+        /* After Screen - Modern mobile-first */
+        .after-screen {
+            background: #000;
+            color: white;
+        }
+
+        .after-screen .nav-bar {
+            background: #000;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #222;
+        }
+
+        .after-screen .nav-icon {
+            font-size: 24px;
+            opacity: 0.6;
+        }
+
+        .after-screen .nav-icon.active {
+            opacity: 1;
+        }
+
+        .after-screen .song-card {
+            background: #1a1a1a;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .after-screen .album-art {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .after-screen .song-info {
+            flex: 1;
+        }
+
+        .after-screen .song-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .after-screen .artist-name {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .after-screen .player-section {
+            padding: 20px 15px;
+            background: #0a0a0a;
+        }
+
+        .after-screen .playback-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .after-screen .play-button {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .after-screen .progress {
+            flex: 1;
+        }
+
+        .after-screen .progress-track {
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            margin-bottom: 5px;
+        }
+
+        .after-screen .progress-fill {
+            height: 100%;
+            width: 30%;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        .after-screen .time-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .after-screen .tab-bar {
+            display: flex;
+            padding: 0 15px;
+            gap: 20px;
+            border-bottom: 1px solid #222;
+            overflow-x: auto;
+        }
+
+        .after-screen .tab-item {
+            padding: 15px 0;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .after-screen .tab-item.active {
+            color: white;
+            border-bottom-color: #667eea;
+        }
+
+        .after-screen .chord-controls {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .after-screen .key-button {
+            padding: 10px 20px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            font-size: 14px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .after-screen .capo-toggle {
+            padding: 10px 20px;
+            background: white;
+            color: #000;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .after-screen .song-info-bar {
+            padding: 10px 15px;
+            font-size: 13px;
+            color: #999;
+            display: flex;
+            gap: 15px;
+        }
+
+        .after-screen .download-btn {
+            padding: 15px 20px;
+            margin: 0 15px 20px;
+            background: #1a1a1a;
+            border-radius: 25px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .after-screen .chord-sheet {
+            background: white;
+            color: #000;
+            padding: 20px 15px;
+            margin: 0 15px 15px;
+            border-radius: 15px;
+        }
+
+        .after-screen .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #999;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .after-screen .chord-line {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .after-screen .chord {
+            color: #667eea;
+            font-weight: 700;
         }
 
         .benefit-badge {
@@ -337,119 +630,263 @@
     <div class="container">
         <a href="index.html" class="back-link">← Back to Home</a>
         
-        <div class="header">
-            <h1>Mobile Experience Transformation</h1>
-            <p>From desktop-centric to mobile-first worship preparation</p>
-            <div class="stat-highlight">60% of worship activity happens mobile → We need to meet users where they work</div>
+                    <div class="header">
+            <h1>Mobile Experience Evolution</h1>
+            <p>Current mobile-optimized → Version 3.0 with team collaboration</p>
+            <div class="stat-highlight">Adding setlist integration, team coordination & offline mode</div>
         </div>
 
         <div class="comparison-container">
             <div class="comparison-side">
-                <div class="side-label before-label">❌ BEFORE</div>
+                <div class="side-label before-label">📱 CURRENT</div>
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="screen-content before-screen">
-                            <div class="header-bar">Psallo</div>
-                            <div class="content-item">
-                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">How Great Is Our God</div>
-                                <div class="tiny-text">Chris Tomlin • Intro: G | Verse 1: G-C-D-Em | Chorus: G-D-Em-C-D | Bridge...</div>
-                                <div class="cramped">
-                                    <button>Play Video</button>
-                                    <button>Chart</button>
-                                    <button>Learn</button>
-                                </div>
-                                <div class="problem-badge">Text too small</div>
+                            <div class="nav-bar">
+                                <div class="nav-icon">✕</div>
+                                <div class="nav-icon">👥</div>
+                                <div class="nav-icon">🎵</div>
+                                <div class="nav-icon">▶</div>
+                                <div class="nav-icon">👤</div>
                             </div>
-                            <div class="content-item">
-                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">10,000 Reasons</div>
-                                <div class="tiny-text">Matt Redman • Intro: G-D-Em-C | Verse: G-D-Em-C-G-D-C | Chorus: G-D...</div>
-                                <div class="cramped">
-                                    <button>Play Video</button>
-                                    <button>Chart</button>
-                                    <button>Learn</button>
+
+                            <div class="song-header">
+                                <div class="album-art">
+                                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                                        🌸
+                                    </div>
                                 </div>
-                                <div class="problem-badge">Buttons cramped</div>
-                            </div>
-                            <div class="content-item">
-                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">Good Good Father</div>
-                                <div class="tiny-text">Chris Tomlin • Key: G | Tempo: 72 BPM | Time: 4/4 | Capo: None | Difficulty: Intermediate...</div>
-                                <div class="cramped">
-                                    <button>Play Video</button>
-                                    <button>Chart</button>
-                                    <button>Learn</button>
+                                <div class="song-info">
+                                    <div class="song-title">Goodness of God</div>
+                                    <div class="song-artist">The Worship Initiative, Vol. 17</div>
                                 </div>
-                                <div class="problem-badge">Hard to tap accurately</div>
+                                <div class="menu-icon">☰</div>
                             </div>
-                            <div style="text-align: center; margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px; color: #856404; font-size: 12px; font-weight: 600;">
-                                ⚠️ Desktop layout shrunk to mobile
+
+                            <div class="player-bar">
+                                <div class="play-btn">▶</div>
+                                <div class="time-info">
+                                    <div class="time-labels">
+                                        <span>00:00</span>
+                                        <span>05:04</span>
+                                    </div>
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="settings-icon">⚙</div>
+                            </div>
+
+                            <div class="tabs">
+                                <div class="tab active">Chords</div>
+                                <div class="tab">Videos</div>
+                                <div class="tab">Devotional</div>
+                                <div class="tab">Scripture</div>
+                            </div>
+
+                            <div class="key-controls">
+                                <div class="key-dropdown">
+                                    Starting Key: Ab ▼
+                                </div>
+                                <div class="capo-btn">ABC</div>
+                                <div class="sharp-btn">#</div>
+                            </div>
+
+                            <div class="song-meta">
+                                <span>CCLI: 7117726</span>
+                                <span>63 BPM</span>
+                                <span>4/4</span>
+                            </div>
+
+                            <div class="download-section">
+                                <div class="download-btn">
+                                    🔒 Download Charts
+                                </div>
+                            </div>
+
+                            <div class="chord-cards">
+                                <div class="chord-card">
+                                    <div class="section-header">INTRO</div>
+                                    <div class="chord-lines">
+                                        <span class="chord">Ab</span> <span class="chord">Absus</span> <span class="chord">Ab</span><br>
+                                        <span class="chord">Ab</span> <span class="chord">Absus</span> <span class="chord">Ab</span>
+                                    </div>
+                                </div>
+
+                                <div class="chord-card">
+                                    <div class="section-header">VERSE 1</div>
+                                    <div class="chord-lines">
+                                        <span class="chord">Ab</span> I love You <span class="chord">Db</span> Lord oh Your<br>
+                                        <span class="chord">Ab</span> mercy never fails me<br><br>
+                                        <span class="chord">Eb/G</span> <span class="chord">Fm</span> All my <span class="chord">Db</span> days<br>
+                                        I've been <span class="chord">Eb</span> held in Your hands
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div style="margin-top: 20px; color: white;">
-                    <h3 style="font-size: 20px; margin-bottom: 15px;">Problems:</h3>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Current State:</h3>
                     <ul style="list-style: none; line-height: 2;">
-                        <li>❌ Text illegible on small screens</li>
-                        <li>❌ Buttons too close together</li>
-                        <li>❌ Horizontal scrolling required</li>
-                        <li>❌ No touch-optimized interactions</li>
-                        <li>❌ Video player not mobile-friendly</li>
+                        <li>✅ Mobile-optimized layout</li>
+                        <li>✅ Dark mode for stage use</li>
+                        <li>✅ Touch-friendly controls</li>
+                        <li>⚠️ No team features</li>
+                        <li>⚠️ No offline mode</li>
                     </ul>
                 </div>
             </div>
 
             <div class="comparison-side">
-                <div class="side-label after-label">✓ AFTER</div>
+                <div class="side-label after-label">✨ AFTER</div>
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
                     <div class="phone-screen">
                         <div class="screen-content after-screen">
-                            <div class="header-bar">
-                                <div class="header-title">Today</div>
-                                <div class="icon-btn">👤</div>
+                            <div class="nav-bar">
+                                <div class="nav-icon">✕</div>
+                                <div class="nav-icon">👥</div>
+                                <div class="nav-icon active">🎵</div>
+                                <div class="nav-icon">▶</div>
+                                <div class="nav-icon">👤</div>
                             </div>
-                            
+
+                            <!-- Team Context Banner -->
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; margin: 15px 15px 0; border-radius: 12px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 20px;">📋</span>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 14px; font-weight: 700;">Sunday Service • Oct 27</div>
+                                        <div style="font-size: 12px; opacity: 0.9;">Song 3 of 5 • Your part: Keys</div>
+                                    </div>
+                                    <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;">
+                                        →
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="song-card">
-                                <div class="song-title">How Great Is Our God</div>
-                                <div class="song-artist">Chris Tomlin</div>
-                                <div class="action-buttons">
-                                    <button class="action-btn">🎥 Video</button>
-                                    <button class="action-btn">🎼 Chart</button>
+                                <div class="album-art">🎵</div>
+                                <div class="song-info">
+                                    <div class="song-name">Goodness of God</div>
+                                    <div class="artist-name">The Worship Initiative, Vol. 17</div>
+                                    <!-- Team Status -->
+                                    <div style="display: flex; gap: 8px; margin-top: 8px; align-items: center;">
+                                        <div style="display: flex; margin-left: -8px;">
+                                            <div style="width: 24px; height: 24px; background: #43e97b; border-radius: 50%; border: 2px solid #000; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px;">✓</div>
+                                            <div style="width: 24px; height: 24px; background: #43e97b; border-radius: 50%; border: 2px solid #000; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px;">✓</div>
+                                            <div style="width: 24px; height: 24px; background: #ffa500; border-radius: 50%; border: 2px solid #000; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 12px;">⏱</div>
+                                        </div>
+                                        <span style="font-size: 12px; color: #999;">3 of 4 ready</span>
+                                    </div>
+                                </div>
+                                <!-- Offline indicator -->
+                                <div style="position: absolute; top: 15px; right: 15px; background: rgba(67, 233, 123, 0.2); padding: 4px 8px; border-radius: 8px; font-size: 11px; color: #43e97b; font-weight: 600;">
+                                    ⬇ Offline
                                 </div>
                             </div>
 
-                            <div class="quick-access">
-                                <div class="quick-card">
-                                    <div class="quick-icon">📋</div>
-                                    <div class="quick-label">This Sunday</div>
-                                </div>
-                                <div class="quick-card">
-                                    <div class="quick-icon">⭐</div>
-                                    <div class="quick-label">Favorites</div>
+                            <div class="player-section">
+                                <div class="playback-controls">
+                                    <div class="play-button">▶</div>
+                                    <div class="progress">
+                                        <div class="progress-track">
+                                            <div class="progress-fill"></div>
+                                        </div>
+                                        <div class="time-labels">
+                                            <span>0:00</span>
+                                            <span>5:04</span>
+                                        </div>
+                                    </div>
+                                    <!-- Instrument isolation toggle -->
+                                    <div style="font-size: 20px; padding: 8px; background: #667eea; border-radius: 8px;">🎹</div>
                                 </div>
                             </div>
 
-                            <div style="background: #f8f9ff; padding: 20px; border-radius: 12px; margin-top: 10px;">
-                                <div style="color: #667eea; font-weight: 700; font-size: 16px; margin-bottom: 10px;">🎯 Team Practice</div>
-                                <div style="color: #666; font-size: 14px; line-height: 1.5;">
-                                    Your team has 3 songs to review before Thursday rehearsal
+                            <div class="tab-bar">
+                                <div class="tab-item active">Chords</div>
+                                <div class="tab-item">Videos</div>
+                                <div class="tab-item">
+                                    Team
+                                    <span style="background: #667eea; color: white; border-radius: 10px; padding: 2px 6px; font-size: 11px; margin-left: 4px;">2</span>
+                                </div>
+                                <div class="tab-item">Notes</div>
+                            </div>
+
+                            <div class="chord-controls">
+                                <div class="key-button">
+                                    Starting Key: Ab ▼
+                                </div>
+                                <div class="capo-toggle">ABC</div>
+                                <div style="font-size: 20px;">#</div>
+                                <!-- Quick Actions -->
+                                <div style="margin-left: auto; font-size: 20px;">💬</div>
+                            </div>
+
+                            <div class="song-info-bar">
+                                <span>CCLI: 7117726</span>
+                                <span>63 BPM</span>
+                                <span>4/4</span>
+                            </div>
+
+                            <!-- Team Notes Banner -->
+                            <div style="margin: 0 15px 15px; padding: 12px 15px; background: #1a1a1a; border-left: 3px solid #ffa500; border-radius: 10px;">
+                                <div style="display: flex; align-items: start; gap: 10px;">
+                                    <span style="font-size: 16px;">💡</span>
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">Sarah (Worship Leader)</div>
+                                        <div style="font-size: 13px; color: #ccc;">Let's do the bridge twice on Sunday - building energy into the final chorus</div>
+                                        <div style="font-size: 11px; color: #666; margin-top: 4px;">2 hours ago</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="benefit-badge">✓ Large touch targets</div>
-                            <div class="benefit-badge">✓ Readable text</div>
+                            <div class="download-btn">
+                                🔒 Download Charts
+                            </div>
+
+                            <div class="chord-sheet">
+                                <!-- My Part Highlight -->
+                                <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 10px; border-radius: 8px; margin-bottom: 15px; border-left: 3px solid #667eea;">
+                                    <div style="font-size: 12px; font-weight: 700; color: #667eea; margin-bottom: 5px;">🎹 YOUR PART: KEYS</div>
+                                    <div style="font-size: 12px; color: #666;">Focus on: Intro, Verse 1-2, Chorus</div>
+                                </div>
+
+                                <div class="section-label">INTRO</div>
+                                <div class="chord-line">
+                                    <span class="chord">Ab</span> <span class="chord">Absus</span> <span class="chord">Ab</span>
+                                </div>
+                                <div class="chord-line">
+                                    <span class="chord">Ab</span> <span class="chord">Absus</span> <span class="chord">Ab</span>
+                                </div>
+
+                                <div class="section-label" style="margin-top: 15px;">VERSE 1</div>
+                                <div class="chord-line">
+                                    <span class="chord">Ab</span> I love You <span class="chord">Db</span> Lord oh Your<br>
+                                    <span class="chord">Ab</span> mercy never fails me
+                                </div>
+                                <div class="chord-line">
+                                    <span class="chord">Eb/G</span> <span class="chord">Fm</span> All my <span class="chord">Db</span> days<br>
+                                    I've been <span class="chord">Eb</span> held in Your hands
+                                </div>
+                            </div>
+
+                            <div style="padding: 0 15px 20px;">
+                                <div class="benefit-badge">✓ Team coordination</div>
+                                <div class="benefit-badge">✓ Part assignments</div>
+                                <div class="benefit-badge">✓ Offline ready</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div style="margin-top: 20px; color: white;">
-                    <h3 style="font-size: 20px; margin-bottom: 15px;">Improvements:</h3>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">New Features:</h3>
                     <ul style="list-style: none; line-height: 2;">
-                        <li>✅ Card-based layout for readability</li>
-                        <li>✅ Large, tappable buttons (44px+)</li>
-                        <li>✅ Native mobile navigation</li>
-                        <li>✅ Contextual quick actions</li>
-                        <li>✅ Optimized video player</li>
+                        <li>✅ <strong>Setlist integration</strong> - See context</li>
+                        <li>✅ <strong>Team readiness</strong> - Who's practiced</li>
+                        <li>✅ <strong>Part assignments</strong> - Know your role</li>
+                        <li>✅ <strong>Team messaging</strong> - In-app notes</li>
+                        <li>✅ <strong>Offline mode</strong> - Works without WiFi</li>
                     </ul>
                 </div>
             </div>
@@ -457,81 +894,81 @@
 
         <div class="improvements-grid">
             <div class="improvement-card">
-                <div class="improvement-icon">📱</div>
-                <div class="improvement-title">Touch-First Design</div>
+                <div class="improvement-icon">👥</div>
+                <div class="improvement-title">Team Coordination</div>
                 <div class="improvement-desc">
-                    All buttons and interactive elements are minimum 44x44px for easy tapping. No more frustrated mis-taps backstage before service.
+                    See which team members have practiced their parts. Get notified when the worship leader adds notes or makes changes to the setlist.
                 </div>
-                <div class="improvement-impact">+40% Mobile Engagement</div>
+                <div class="improvement-impact">70% Feature Adoption</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">📋</div>
+                <div class="improvement-title">Setlist Context</div>
+                <div class="improvement-desc">
+                    Know exactly where you are in the service. See your assigned parts for each song and navigate between songs in the setlist seamlessly.
+                </div>
+                <div class="improvement-impact">+40% User Confidence</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">💬</div>
+                <div class="improvement-title">In-App Messaging</div>
+                <div class="improvement-desc">
+                    Team notes and comments appear directly on the song page. No more switching between apps to check messages from the worship leader.
+                </div>
+                <div class="improvement-impact">-60% Coordination Time</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">📥</div>
+                <div class="improvement-title">True Offline Mode</div>
+                <div class="improvement-desc">
+                    Download songs for offline access. Perfect for venues with poor WiFi or when you want to practice without internet connectivity.
+                </div>
+                <div class="improvement-impact">Works Anywhere</div>
             </div>
 
             <div class="improvement-card">
                 <div class="improvement-icon">🎯</div>
-                <div class="improvement-title">Context-Aware UI</div>
+                <div class="improvement-title">Part Assignments</div>
                 <div class="improvement-desc">
-                    Home screen adapts to show what's most relevant: upcoming Sunday songs, team assignments, practice reminders.
+                    See exactly which sections you're responsible for. Worship leaders can assign specific parts (intro, verses, bridge) to each team member.
                 </div>
-                <div class="improvement-impact">-50% Time to First Value</div>
+                <div class="improvement-impact">+50% Practice Efficiency</div>
             </div>
 
             <div class="improvement-card">
-                <div class="improvement-icon">⚡</div>
-                <div class="improvement-title">Fast Performance</div>
+                <div class="improvement-icon">🎹</div>
+                <div class="improvement-title">Instrument Isolation</div>
                 <div class="improvement-desc">
-                    Optimized images, lazy loading, and progressive enhancement ensure instant load times even on slower church WiFi.
+                    Toggle to hear your instrument louder in the mix. Practice along with the track while focusing on your specific part.
                 </div>
-                <div class="improvement-impact">+20% Weekly Active Users</div>
-            </div>
-
-            <div class="improvement-card">
-                <div class="improvement-icon">🎥</div>
-                <div class="improvement-title">Mobile Video Player</div>
-                <div class="improvement-desc">
-                    Native controls, quality selection, and picture-in-picture support. Watch tutorials while viewing chord charts.
-                </div>
-                <div class="improvement-impact">+35% Session Length</div>
-            </div>
-
-            <div class="improvement-card">
-                <div class="improvement-icon">🔍</div>
-                <div class="improvement-title">Smart Search</div>
-                <div class="improvement-desc">
-                    Voice search, recent history, and predictive suggestions make finding songs quick during time-sensitive moments.
-                </div>
-                <div class="improvement-impact">+30% Search Success Rate</div>
-            </div>
-
-            <div class="improvement-card">
-                <div class="improvement-icon">💾</div>
-                <div class="improvement-title">Offline Ready</div>
-                <div class="improvement-desc">
-                    Cache recently viewed charts and videos for offline access. No internet backstage? No problem.
-                </div>
-                <div class="improvement-impact">Phase 2: Native Apps</div>
+                <div class="improvement-impact">Enhanced Learning</div>
             </div>
         </div>
 
         <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 60px; text-align: center;">
-            <h2 style="color: #667eea; font-size: 36px; margin-bottom: 20px;">Why This Matters</h2>
+            <h2 style="color: #667eea; font-size: 36px; margin-bottom: 20px;">Version 3.0: Team Collaboration Meets Mobile</h2>
             <div style="max-width: 800px; margin: 0 auto;">
                 <p style="color: #666; font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
-                    Sunday mornings are high-stress, time-sensitive moments. Worship leaders are making last-minute key changes, musicians are reviewing parts backstage, and tech teams are checking arrangements during soundcheck.
+                    Psallo's current mobile experience is already optimized for individual use. Version 3.0 takes it further by adding the team coordination features that worship leaders have been requesting.
                 </p>
                 <p style="color: #666; font-size: 18px; line-height: 1.8; margin-bottom: 30px;">
-                    <strong style="color: #667eea;">A mobile-first experience isn't just nice to have—it's essential</strong> for being there when users need us most. Desktop is for learning during the week. Mobile is for executing on Sunday.
+                    <strong style="color: #667eea;">The missing piece: collaboration.</strong> Now team members can see their assignments, track team readiness, communicate in-app, and work offline—all while maintaining the beautiful dark-mode experience that works perfectly backstage.
                 </p>
                 <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
                     <div>
-                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">60%</div>
-                        <div style="color: #888; font-size: 16px;">Activity on Mobile</div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">70%</div>
+                        <div style="color: #888; font-size: 16px;">Team Feature Adoption</div>
                     </div>
                     <div>
-                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">6-8</div>
-                        <div style="color: #888; font-size: 16px;">Weeks to Build</div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">-60%</div>
+                        <div style="color: #888; font-size: 16px;">Coordination Time Saved</div>
                     </div>
                     <div>
-                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">+40%</div>
-                        <div style="color: #888; font-size: 16px;">Engagement Increase</div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">100%</div>
+                        <div style="color: #888; font-size: 16px;">Works Offline</div>
                     </div>
                 </div>
             </div>
