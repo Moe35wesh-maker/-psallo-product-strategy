@@ -761,4 +761,38 @@
                 <div class="metric-card">
                     <div class="metric-label">LTV:CAC Ratio</div>
                     <div class="metric-value">3:1</div>
-                    <div style="color: #888;
+                    <div style="color: #888; font-size: 12px;">minimum target</div>
+                    <div class="metric-trend">↑ Healthy SaaS</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Expansion Revenue</div>
+                    <div class="metric-value">30%</div>
+                    <div style="color: #888; font-size: 12px;">from existing accounts</div>
+                    <div class="metric-trend">↑ Seat expansion</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label">Viral Coefficient</div>
+                    <div class="metric-value">0.3</div>
+                    <div style="color: #888; font-size: 12px;">referrals per user</div>
+                    <div class="metric-trend">↑ Month 12 target</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
