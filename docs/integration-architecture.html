@@ -1,1 +1,697 @@
-https://moe35wesh-maker.github.io/psallo-product-strategy/integration-architecture.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psallo Integration Platform - Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .architecture-diagram {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            margin-bottom: 40px;
+        }
+
+        .architecture-layer {
+            margin-bottom: 30px;
+        }
+
+        .layer-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .layer-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .component-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .component-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .component-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .component-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .component-desc {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .connector {
+            text-align: center;
+            margin: 20px 0;
+            color: #667eea;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .integration-partners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .partner-logo {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .partner-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .partner-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .use-cases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .use-case-tag {
+            padding: 6px 12px;
+            background: #f0f0f0;
+            color: #667eea;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .api-endpoints {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 40px;
+        }
+
+        .api-endpoints h2 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .endpoint-section {
+            margin-bottom: 30px;
+        }
+
+        .endpoint-category {
+            font-size: 20px;
+            font-weight: 700;
+            color: #764ba2;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .endpoint-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .endpoint-item {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .endpoint-method {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .endpoint-path {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .endpoint-description {
+            color: #666;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 56px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-title {
+            color: #667eea;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .benefit-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .benefit-metric {
+            margin-top: 15px;
+            padding: 12px;
+            background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);
+            color: white;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="header">
+            <h1>Integration Platform Architecture</h1>
+            <p>Connecting Psallo to the church technology ecosystem</p>
+        </div>
+
+        <div class="architecture-diagram">
+            <div class="architecture-layer">
+                <div class="layer-title">🎯 Client Applications</div>
+                <div class="components-grid">
+                    <div class="component-box" style="background: linear-gradient(135deg, #8b5fbf 0%, #a073d4 100%);">
+                        <div class="component-icon">💻</div>
+                        <div class="component-name">Web App</div>
+                        <div class="component-desc">Desktop experience</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #8b5fbf 0%, #a073d4 100%);">
+                        <div class="component-icon">📱</div>
+                        <div class="component-name">Mobile Apps</div>
+                        <div class="component-desc">iOS & Android native</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #8b5fbf 0%, #a073d4 100%);">
+                        <div class="component-icon">🔌</div>
+                        <div class="component-name">Third-Party Apps</div>
+                        <div class="component-desc">Via public API</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connector">⬇️ API Gateway ⬇️</div>
+
+            <div class="architecture-layer">
+                <div class="layer-title">🔧 Core Services</div>
+                <div class="components-grid">
+                    <div class="component-box">
+                        <div class="component-icon">🎵</div>
+                        <div class="component-name">Content API</div>
+                        <div class="component-desc">Songs, videos, charts</div>
+                    </div>
+                    <div class="component-box">
+                        <div class="component-icon">👥</div>
+                        <div class="component-name">Team API</div>
+                        <div class="component-desc">Users, roles, permissions</div>
+                    </div>
+                    <div class="component-box">
+                        <div class="component-icon">📋</div>
+                        <div class="component-name">Setlist API</div>
+                        <div class="component-desc">Planning & assignments</div>
+                    </div>
+                    <div class="component-box">
+                        <div class="component-icon">📊</div>
+                        <div class="component-name">Analytics API</div>
+                        <div class="component-desc">Usage & insights</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connector">⬇️ Integration Layer ⬇️</div>
+
+            <div class="architecture-layer">
+                <div class="layer-title">🔗 Integration Services</div>
+                <div class="components-grid">
+                    <div class="component-box" style="background: linear-gradient(135deg, #a073d4 0%, #b587e9 100%);">
+                        <div class="component-icon">🔄</div>
+                        <div class="component-name">Webhook Service</div>
+                        <div class="component-desc">Real-time events</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #a073d4 0%, #b587e9 100%);">
+                        <div class="component-icon">🔐</div>
+                        <div class="component-name">OAuth Service</div>
+                        <div class="component-desc">Secure authorization</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #a073d4 0%, #b587e9 100%);">
+                        <div class="component-icon">⚡</div>
+                        <div class="component-name">Sync Engine</div>
+                        <div class="component-desc">Data synchronization</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #a073d4 0%, #b587e9 100%);">
+                        <div class="component-icon">📝</div>
+                        <div class="component-name">Logging</div>
+                        <div class="component-desc">Audit & monitoring</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="connector">⬇️ Partner Integrations ⬇️</div>
+
+            <div class="architecture-layer">
+                <div class="layer-title">🤝 External Partners</div>
+                <div class="components-grid">
+                    <div class="component-box" style="background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);">
+                        <div class="component-icon">📅</div>
+                        <div class="component-name">Planning Center</div>
+                        <div class="component-desc">Service planning sync</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);">
+                        <div class="component-icon">⚡</div>
+                        <div class="component-name">Zapier</div>
+                        <div class="component-desc">No-code automation</div>
+                    </div>
+                    <div class="component-box" style="background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);">
+                        <div class="component-icon">⛪</div>
+                        <div class="component-name">ChMS Systems</div>
+                        <div class="component-desc">CCB, Rock, FellowshipOne</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="color: white; text-align: center; margin: 40px 0;">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Integration Partners</h2>
+            <p style="font-size: 18px; opacity: 0.9;">Connecting to the tools churches already use</p>
+        </div>
+
+        <div class="integration-partners">
+            <div class="partner-card">
+                <div class="partner-logo">📅</div>
+                <div class="partner-name">Planning Center</div>
+                <div class="partner-desc">
+                    The industry-standard service planning platform used by 50,000+ churches worldwide.
+                </div>
+                <div class="use-cases">
+                    <span class="use-case-tag">Import Setlists</span>
+                    <span class="use-case-tag">Push Arrangements</span>
+                    <span class="use-case-tag">Team Sync</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo">⚡</div>
+                <div class="partner-name">Zapier</div>
+                <div class="partner-desc">
+                    No-code automation platform enabling churches to build custom workflows without developers.
+                </div>
+                <div class="use-cases">
+                    <span class="use-case-tag">Slack Notifications</span>
+                    <span class="use-case-tag">Email Reminders</span>
+                    <span class="use-case-tag">Google Sheets</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo">⛪</div>
+                <div class="partner-name">Church Management</div>
+                <div class="partner-desc">
+                    CCB, Rock RMS, FellowshipOne, and other systems for member management and volunteer coordination.
+                </div>
+                <div class="use-cases">
+                    <span class="use-case-tag">Team Rostering</span>
+                    <span class="use-case-tag">SSO Login</span>
+                    <span class="use-case-tag">Volunteer Tracking</span>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo">🔐</div>
+                <div class="partner-name">Enterprise SSO</div>
+                <div class="partner-desc">
+                    SAML 2.0 and OAuth integration with Okta, Azure AD, Google Workspace for secure enterprise access.
+                </div>
+                <div class="use-cases">
+                    <span class="use-case-tag">Single Sign-On</span>
+                    <span class="use-case-tag">Auto Provisioning</span>
+                    <span class="use-case-tag">Security</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="api-endpoints">
+            <h2>Public API Endpoints (Beta)</h2>
+            
+            <div class="endpoint-section">
+                <div class="endpoint-category">🎵 Songs & Content</div>
+                <div class="endpoint-list">
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/songs</span>
+                        <div class="endpoint-description">List all songs with filters (genre, tempo, key, artist)</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/songs/{id}</span>
+                        <div class="endpoint-description">Get song details, chord charts, and video URLs</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/songs/{id}/chart</span>
+                        <div class="endpoint-description">Get transposable chord chart in specified key</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint-section">
+                <div class="endpoint-category">📋 Setlists & Planning</div>
+                <div class="endpoint-list">
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/setlists</span>
+                        <div class="endpoint-description">List team setlists with date filters</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">POST</span>
+                        <span class="endpoint-path">/api/v1/setlists</span>
+                        <div class="endpoint-description">Create new setlist with songs and assignments</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">PUT</span>
+                        <span class="endpoint-path">/api/v1/setlists/{id}</span>
+                        <div class="endpoint-description">Update setlist order, songs, or team assignments</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint-section">
+                <div class="endpoint-category">👥 Team Management</div>
+                <div class="endpoint-list">
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/team/members</span>
+                        <div class="endpoint-description">List all team members with roles and instruments</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">POST</span>
+                        <span class="endpoint-path">/api/v1/team/members</span>
+                        <div class="endpoint-description">Add new team member and send invitation</div>
+                    </div>
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">GET</span>
+                        <span class="endpoint-path">/api/v1/team/activity</span>
+                        <div class="endpoint-description">Get team engagement and practice progress</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint-section">
+                <div class="endpoint-category">🔔 Webhooks</div>
+                <div class="endpoint-list">
+                    <div class="endpoint-item">
+                        <span class="endpoint-method">POST</span>
+                        <span class="endpoint-path">/api/v1/webhooks</span>
+                        <div class="endpoint-description">Register webhook for real-time events (setlist.created, member.invited, practice.completed)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="color: white; text-align: center; margin: 60px 0 40px 0;">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Business Impact</h2>
+            <p style="font-size: 18px; opacity: 0.9;">Why integration platform matters for growth</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <div class="benefit-title">Reduces Friction</div>
+                <div class="benefit-desc">
+                    Churches don't have to choose between Psallo and their existing tools. Integration means they can have both.
+                </div>
+                <div class="benefit-metric">-10% Churn Reduction</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🏢</div>
+                <div class="benefit-title">Unlocks Enterprise</div>
+                <div class="benefit-desc">
+                    API access and SSO are table stakes for large churches with IT requirements. Opens door to high-value deals.
+                </div>
+                <div class="benefit-metric">5 New 11+ Seat Deals</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔗</div>
+                <div class="benefit-title">Network Effects</div>
+                <div class="benefit-desc">
+                    Every integration partner becomes a discovery channel. Planning Center users discover Psallo through the integration.
+                </div>
+                <div class="benefit-metric">+15% Acquisition</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-title">Viral Expansion</div>
+                <div class="benefit-desc">
+                    When worship leader imports setlist from Planning Center to Psallo, their entire team gets invited to join.
+                </div>
+                <div class="benefit-metric">0.3 Viral Coefficient</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🛠️</div>
+                <div class="benefit-title">Platform Play</div>
+                <div class="benefit-desc">
+                    Public API enables third-party developers to build on Psallo, creating ecosystem value we don't have to build.
+                </div>
+                <div class="benefit-metric">Long-term Moat</div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">Data Insights</div>
+                <div class="benefit-desc">
+                    Integration data reveals how worship teams actually work across multiple tools, informing future product decisions.
+                </div>
+                <div class="benefit-metric">Better Roadmap Decisions</div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 60px;">
+            <h2 style="color: #667eea; font-size: 32px; margin-bottom: 20px; text-align: center;">Implementation Timeline</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="display: flex; gap: 30px; margin-bottom: 30px; align-items: center;">
+                    <div style="flex: 0 0 120px; text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #667eea;">Month 9-11</div>
+                        <div style="font-size: 14px; color: #888;">3 months</div>
+                    </div>
+                    <div style="flex: 1; padding: 20px; background: #f8f9ff; border-radius: 10px; border-left: 4px solid #667eea;">
+                        <div style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 10px;">Phase 1: Core Integrations</div>
+                        <div style="color: #666; line-height: 1.6;">
+                            • Planning Center Services integration (OAuth + API)<br>
+                            • Public API beta (read-only endpoints)<br>
+                            • Zapier app submission<br>
+                            • API documentation portal
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 30px; margin-bottom: 30px; align-items: center;">
+                    <div style="flex: 0 0 120px; text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #667eea;">Month 12-14</div>
+                        <div style="font-size: 14px; color: #888;">2 months</div>
+                    </div>
+                    <div style="flex: 1; padding: 20px; background: #f8f9ff; border-radius: 10px; border-left: 4px solid #667eea;">
+                        <div style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 10px;">Phase 2: Enterprise Features</div>
+                        <div style="color: #666; line-height: 1.6;">
+                            • SAML/SSO integration (Okta, Azure AD)<br>
+                            • Webhooks for real-time events<br>
+                            • Write endpoints for API (create/update setlists)<br>
+                            • Rate limiting and API keys
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 30px; align-items: center;">
+                    <div style="flex: 0 0 120px; text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #667eea;">Month 15-18</div>
+                        <div style="font-size: 14px; color: #888;">3 months</div>
+                    </div>
+                    <div style="flex: 1; padding: 20px; background: #f8f9ff; border-radius: 10px; border-left: 4px solid #667eea;">
+                        <div style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 10px;">Phase 3: Platform Expansion</div>
+                        <div style="color: #666; line-height: 1.6;">
+                            • Additional ChMS integrations (CCB, Rock RMS)<br>
+                            • Developer portal and SDK release<br>
+                            • Partner program for third-party apps<br>
+                            • Advanced analytics and usage dashboards
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 60px; color: white; text-align: center;">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Why Build Integration Platform?</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 18px; line-height: 1.8; opacity: 0.95; margin-bottom: 30px;">
+                    We considered becoming a feature inside Planning Center, but integration gives us the best of both worlds: access to their 50K+ churches while maintaining our unique value proposition in discipleship and team development.
+                </p>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700;">20%</div>
+                        <div style="font-size: 16px; opacity: 0.9;">6-10 Seat Accounts Integrate</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700;">3</div>
+                        <div style="font-size: 16px; opacity: 0.9;">Months to Build Phase 1</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700;">-10%</div>
+                        <div style="font-size: 16px; opacity: 0.9;">Churn Reduction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
