@@ -1,1 +1,567 @@
-https://github.com/moe35wesh-maker/psallo-product-strategy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psallo Product Strategy | Moses Ondeche - Product Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .stat-value {
+            font-size: 52px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .feature-metrics {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .metric-badge {
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .visual-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .visual-link-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .visual-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .visual-link-icon {
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+
+        .visual-link-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .visual-link-desc {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .timeline-section {
+            background: #f8f9ff;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .phase-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .phase-number {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .phase-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .phase-duration {
+            color: #764ba2;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .phase-highlights {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .phase-highlights li {
+            margin-bottom: 8px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .features-grid,
+            .phase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Psallo Product Strategy</h1>
+            <div class="hero-subtitle">From Learning Platform to Team Operating System</div>
+            <p class="hero-description">
+                A comprehensive 24-month product roadmap transforming a worship education platform into the central hub for church worship team preparation, collaboration, and spiritual formation.
+            </p>
+            <div class="cta-buttons">
+                <a href="#visuals" class="btn btn-primary">📊 Explore Visuals</a>
+                <a href="https://github.com/Moe35wesh-maker/psallo-product-strategy" class="btn btn-secondary">📄 View on GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">7,000</div>
+                <div class="stat-label">Current Accounts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">280K</div>
+                <div class="stat-label">Target Churches</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">4X</div>
+                <div class="stat-label">LTV Increase (1-seat → Team)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24</div>
+                <div class="stat-label">Month Roadmap</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">The Challenge</h2>
+        <p class="section-subtitle">
+            How should a worship education platform evolve to become indispensable for church teams while maintaining its unique spiritual formation positioning?
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Mobile Gap</div>
+                <div class="feature-description">
+                    60% of worship activity happens mobile (backstage, soundcheck), but current platform is desktop-centric. Losing engagement during high-intent moments.
+                </div>
+                <div class="feature-metrics">
+                    <span class="metric-badge">Critical Priority</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <div class="feature-title">Collaboration Friction</div>
+                <div class="feature-description">
+                    1,480 multi-seat accounts can't coordinate within the platform. Teams forced to use email/Slack/text for what they learned on Psallo.
+                </div>
+                <div class="feature-metrics">
+                    <span class="metric-badge">High Impact</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">Discovery Overwhelm</div>
+                <div class="feature-description">
+                    750+ songs with no intelligent recommendations or personalized onboarding. New users drop off after signup.
+                </div>
+                <div class="feature-metrics">
+                    <span class="metric-badge">Quick Win</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏢</div>
+                <div class="feature-title">Enterprise Readiness</div>
+                <div class="feature-description">
+                    80 large accounts (11+ seats) lack admin dashboards, SSO, and integrations. Leaving revenue on table.
+                </div>
+                <div class="feature-metrics">
+                    <span class="metric-badge">High ACV</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="visuals">Interactive Visualizations</h2>
+        <p class="section-subtitle">
+            Explore the strategy through interactive timelines, customer segments, competitive analysis, and architecture diagrams
+        </p>
+
+        <div class="visual-links">
+            <a href="roadmap-timeline.html" class="visual-link-card">
+                <div class="visual-link-icon">📅</div>
+                <div class="visual-link-title">Roadmap Timeline</div>
+                <div class="visual-link-desc">Interactive 24-month product roadmap with phases, metrics, and team allocation</div>
+            </a>
+
+            <a href="customer-segments.html" class="visual-link-card">
+                <div class="visual-link-icon">👥</div>
+                <div class="visual-link-title">Customer Segments</div>
+                <div class="visual-link-desc">Funnel visualization of 4 segments from solo learners to enterprise</div>
+            </a>
+
+            <a href="mobile-experience.html" class="visual-link-card">
+                <div class="visual-link-icon">📱</div>
+                <div class="visual-link-title">Mobile Before & After</div>
+                <div class="visual-link-desc">Side-by-side comparison showing mobile transformation</div>
+            </a>
+
+            <a href="integration-architecture.html" class="visual-link-card">
+                <div class="visual-link-icon">🔗</div>
+                <div class="visual-link-title">Integration Platform</div>
+                <div class="visual-link-desc">Architecture diagram with API endpoints and partner integrations</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="timeline-section">
+        <h2 class="section-title">Roadmap Overview</h2>
+        <p class="section-subtitle">
+            Three phases balancing quick wins with strategic bets over 24 months
+        </p>
+
+        <div class="phase-grid">
+            <div class="phase-card">
+                <div class="phase-number">Phase 1</div>
+                <div class="phase-title">Foundation & Quick Wins</div>
+                <div class="phase-duration">Months 0-6</div>
+                <ul class="phase-highlights">
+                    <li>✅ Mobile-responsive web experience</li>
+                    <li>✅ Team planning & setlist builder</li>
+                    <li>✅ Analytics foundation</li>
+                    <li>✅ Onboarding personalization</li>
+                    <li>✅ Content discovery improvements</li>
+                </ul>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">Phase 2</div>
+                <div class="phase-title">Growth & Differentiation</div>
+                <div class="phase-duration">Months 6-12</div>
+                <ul class="phase-highlights">
+                    <li>📱 Native mobile apps (iOS & Android)</li>
+                    <li>🎼 Rehearsal & practice tools</li>
+                    <li>🔗 Integration platform (Planning Center)</li>
+                    <li>📊 Admin dashboard & team management</li>
+                    <li>🤖 AI-powered recommendations</li>
+                </ul>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-number">Phase 3</div>
+                <div class="phase-title">Scale & Innovation</div>
+                <div class="phase-duration">Months 12-24</div>
+                <ul class="phase-highlights">
+                    <li>🎨 Creator marketplace & platform</li>
+                    <li>🏢 Enterprise suite & white-label</li>
+                    <li>👨‍🎓 Youth worship expansion</li>
+                    <li>🎭 Worship arts (production, visuals)</li>
+                    <li>🌐 Platform ecosystem</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-content">
+            <h2>Skills Demonstrated</h2>
+            <p>This case study showcases comprehensive product management competencies</p>
+            <div class="skills-grid">
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">Customer Research</span>
+                <span class="skill-tag">Data & Metrics</span>
+                <span class="skill-tag">Prioritization</span>
+                <span class="skill-tag">Roadmap Planning</span>
+                <span class="skill-tag">Stakeholder Management</span>
+                <span class="skill-tag">Business Acumen</span>
+                <span class="skill-tag">Competitive Analysis</span>
+                <span class="skill-tag">Technical Architecture</span>
+            </div>
+            <div style="margin-top: 50px;">
+                <a href="mailto:mosesondeche@gmail.com" class="btn btn-primary" style="margin-right: 15px;">📧 Contact Me</a>
+                <a href="https://linkedin.com/in/moses-ondeche" class="btn btn-secondary">💼 LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #f8f9ff; padding: 40px 20px; text-align: center; color: #666;">
+        <p>This is a strategic product case study. Psallo is a real product by The Worship Initiative; this roadmap was developed as a portfolio demonstration of product thinking and strategy.</p>
+        <p style="margin-top: 10px;">© 2025 Moses Ondeche | <a href="https://github.com/Moe35wesh-maker/psallo-product-strategy" style="color: #667eea; text-decoration: none;">View on GitHub</a></p>
+    </div>
+</body>
+</html>
