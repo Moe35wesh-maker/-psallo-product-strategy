@@ -1,1 +1,541 @@
-https://moe35wesh-maker.github.io/psallo-product-strategy/mobile-experience.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psallo Mobile Experience - Before & After</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .stat-highlight {
+            font-size: 24px;
+            font-weight: 700;
+            color: #b587e9;
+            margin-top: 15px;
+        }
+
+        .comparison-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .comparison-side {
+            text-align: center;
+        }
+
+        .side-label {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding: 15px 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .before-label {
+            background: linear-gradient(135deg, #8b5fbf 0%, #a073d4 100%);
+            color: white;
+        }
+
+        .after-label {
+            background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);
+            color: white;
+        }
+
+        .phone-mockup {
+            width: 100%;
+            max-width: 375px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .phone-notch {
+            width: 150px;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            margin: 0 auto 10px;
+        }
+
+        .phone-screen {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            min-height: 650px;
+        }
+
+        .screen-content {
+            padding: 20px;
+        }
+
+        .before-screen {
+            font-size: 11px;
+            overflow-x: auto;
+        }
+
+        .before-screen .header-bar {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            margin: -20px -20px 20px -20px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .before-screen .content-item {
+            background: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-size: 10px;
+            overflow: hidden;
+        }
+
+        .before-screen .tiny-text {
+            font-size: 8px;
+            line-height: 1.2;
+            color: #666;
+        }
+
+        .before-screen .cramped {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .before-screen .cramped button {
+            flex: 1;
+            padding: 8px 5px;
+            font-size: 9px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .problem-badge {
+            background: #8b5fbf;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .after-screen .header-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 20px -20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .after-screen .header-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .after-screen .icon-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .after-screen .song-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .after-screen .song-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .after-screen .song-artist {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .after-screen .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .after-screen .action-btn {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .after-screen .quick-access {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .after-screen .quick-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .after-screen .quick-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .after-screen .quick-label {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .benefit-badge {
+            background: #b587e9;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .improvements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .improvement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .improvement-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .improvement-title {
+            color: #667eea;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .improvement-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .improvement-impact {
+            background: linear-gradient(135deg, #b587e9 0%, #d4b5f7 100%);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="header">
+            <h1>Mobile Experience Transformation</h1>
+            <p>From desktop-centric to mobile-first worship preparation</p>
+            <div class="stat-highlight">60% of worship activity happens mobile → We need to meet users where they work</div>
+        </div>
+
+        <div class="comparison-container">
+            <div class="comparison-side">
+                <div class="side-label before-label">❌ BEFORE</div>
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="screen-content before-screen">
+                            <div class="header-bar">Psallo</div>
+                            <div class="content-item">
+                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">How Great Is Our God</div>
+                                <div class="tiny-text">Chris Tomlin • Intro: G | Verse 1: G-C-D-Em | Chorus: G-D-Em-C-D | Bridge...</div>
+                                <div class="cramped">
+                                    <button>Play Video</button>
+                                    <button>Chart</button>
+                                    <button>Learn</button>
+                                </div>
+                                <div class="problem-badge">Text too small</div>
+                            </div>
+                            <div class="content-item">
+                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">10,000 Reasons</div>
+                                <div class="tiny-text">Matt Redman • Intro: G-D-Em-C | Verse: G-D-Em-C-G-D-C | Chorus: G-D...</div>
+                                <div class="cramped">
+                                    <button>Play Video</button>
+                                    <button>Chart</button>
+                                    <button>Learn</button>
+                                </div>
+                                <div class="problem-badge">Buttons cramped</div>
+                            </div>
+                            <div class="content-item">
+                                <div style="font-weight: 700; font-size: 11px; margin-bottom: 8px;">Good Good Father</div>
+                                <div class="tiny-text">Chris Tomlin • Key: G | Tempo: 72 BPM | Time: 4/4 | Capo: None | Difficulty: Intermediate...</div>
+                                <div class="cramped">
+                                    <button>Play Video</button>
+                                    <button>Chart</button>
+                                    <button>Learn</button>
+                                </div>
+                                <div class="problem-badge">Hard to tap accurately</div>
+                            </div>
+                            <div style="text-align: center; margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 8px; color: #856404; font-size: 12px; font-weight: 600;">
+                                ⚠️ Desktop layout shrunk to mobile
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; color: white;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Problems:</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>❌ Text illegible on small screens</li>
+                        <li>❌ Buttons too close together</li>
+                        <li>❌ Horizontal scrolling required</li>
+                        <li>❌ No touch-optimized interactions</li>
+                        <li>❌ Video player not mobile-friendly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="comparison-side">
+                <div class="side-label after-label">✓ AFTER</div>
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="screen-content after-screen">
+                            <div class="header-bar">
+                                <div class="header-title">Today</div>
+                                <div class="icon-btn">👤</div>
+                            </div>
+                            
+                            <div class="song-card">
+                                <div class="song-title">How Great Is Our God</div>
+                                <div class="song-artist">Chris Tomlin</div>
+                                <div class="action-buttons">
+                                    <button class="action-btn">🎥 Video</button>
+                                    <button class="action-btn">🎼 Chart</button>
+                                </div>
+                            </div>
+
+                            <div class="quick-access">
+                                <div class="quick-card">
+                                    <div class="quick-icon">📋</div>
+                                    <div class="quick-label">This Sunday</div>
+                                </div>
+                                <div class="quick-card">
+                                    <div class="quick-icon">⭐</div>
+                                    <div class="quick-label">Favorites</div>
+                                </div>
+                            </div>
+
+                            <div style="background: #f8f9ff; padding: 20px; border-radius: 12px; margin-top: 10px;">
+                                <div style="color: #667eea; font-weight: 700; font-size: 16px; margin-bottom: 10px;">🎯 Team Practice</div>
+                                <div style="color: #666; font-size: 14px; line-height: 1.5;">
+                                    Your team has 3 songs to review before Thursday rehearsal
+                                </div>
+                            </div>
+
+                            <div class="benefit-badge">✓ Large touch targets</div>
+                            <div class="benefit-badge">✓ Readable text</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; color: white;">
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Improvements:</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>✅ Card-based layout for readability</li>
+                        <li>✅ Large, tappable buttons (44px+)</li>
+                        <li>✅ Native mobile navigation</li>
+                        <li>✅ Contextual quick actions</li>
+                        <li>✅ Optimized video player</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="improvements-grid">
+            <div class="improvement-card">
+                <div class="improvement-icon">📱</div>
+                <div class="improvement-title">Touch-First Design</div>
+                <div class="improvement-desc">
+                    All buttons and interactive elements are minimum 44x44px for easy tapping. No more frustrated mis-taps backstage before service.
+                </div>
+                <div class="improvement-impact">+40% Mobile Engagement</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">🎯</div>
+                <div class="improvement-title">Context-Aware UI</div>
+                <div class="improvement-desc">
+                    Home screen adapts to show what's most relevant: upcoming Sunday songs, team assignments, practice reminders.
+                </div>
+                <div class="improvement-impact">-50% Time to First Value</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">⚡</div>
+                <div class="improvement-title">Fast Performance</div>
+                <div class="improvement-desc">
+                    Optimized images, lazy loading, and progressive enhancement ensure instant load times even on slower church WiFi.
+                </div>
+                <div class="improvement-impact">+20% Weekly Active Users</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">🎥</div>
+                <div class="improvement-title">Mobile Video Player</div>
+                <div class="improvement-desc">
+                    Native controls, quality selection, and picture-in-picture support. Watch tutorials while viewing chord charts.
+                </div>
+                <div class="improvement-impact">+35% Session Length</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">🔍</div>
+                <div class="improvement-title">Smart Search</div>
+                <div class="improvement-desc">
+                    Voice search, recent history, and predictive suggestions make finding songs quick during time-sensitive moments.
+                </div>
+                <div class="improvement-impact">+30% Search Success Rate</div>
+            </div>
+
+            <div class="improvement-card">
+                <div class="improvement-icon">💾</div>
+                <div class="improvement-title">Offline Ready</div>
+                <div class="improvement-desc">
+                    Cache recently viewed charts and videos for offline access. No internet backstage? No problem.
+                </div>
+                <div class="improvement-impact">Phase 2: Native Apps</div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-top: 60px; text-align: center;">
+            <h2 style="color: #667eea; font-size: 36px; margin-bottom: 20px;">Why This Matters</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <p style="color: #666; font-size: 18px; line-height: 1.8; margin-bottom: 20px;">
+                    Sunday mornings are high-stress, time-sensitive moments. Worship leaders are making last-minute key changes, musicians are reviewing parts backstage, and tech teams are checking arrangements during soundcheck.
+                </p>
+                <p style="color: #666; font-size: 18px; line-height: 1.8; margin-bottom: 30px;">
+                    <strong style="color: #667eea;">A mobile-first experience isn't just nice to have—it's essential</strong> for being there when users need us most. Desktop is for learning during the week. Mobile is for executing on Sunday.
+                </p>
+                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">60%</div>
+                        <div style="color: #888; font-size: 16px;">Activity on Mobile</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">6-8</div>
+                        <div style="color: #888; font-size: 16px;">Weeks to Build</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 48px; font-weight: 700; color: #667eea;">+40%</div>
+                        <div style="color: #888; font-size: 16px;">Engagement Increase</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
