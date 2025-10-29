@@ -120,11 +120,29 @@
             border-radius: 35px;
             overflow: hidden;
             min-height: 750px;
+            max-height: 750px;
         }
 
         .screen-content {
             height: 100%;
             overflow-y: auto;
+        }
+
+        /* Scrolled state for After screen */
+        .after-screen .screen-content {
+            animation: autoScroll 3s ease-in-out 2s forwards;
+        }
+
+        @keyframes autoScroll {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30%);
+            }
+            100% {
+                transform: translateY(-15%);
+            }
         }
 
         /* Before Screen - Current Psallo interface */
@@ -631,8 +649,8 @@
         <a href="index.html" class="back-link">← Back to Home</a>
         
                     <div class="header">
-            <h1>Mobile Experience Evolution</h1>
-            <p>Current mobile-optimized → Version 3.0 with team collaboration</p>
+            <h1>Mobile Experience Growth</h1>
+            <p>Current mobile-optimized → Enhanced with team collaboration</p>
             <div class="stat-highlight">Adding setlist integration, team coordination & offline mode</div>
         </div>
 
