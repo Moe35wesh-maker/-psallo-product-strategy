@@ -1,6 +1,6 @@
-# Psallo Product Strategy: From Learning Platform to Team Operating System
+# Psallo Product Strategy: From Individual Discipleship to Corporate Growth in Worship
 
-> **A comprehensive product roadmap case study** — Transforming a worship education platform into the central hub for church worship team preparation, collaboration, and spiritual formation.
+> **A comprehensive product roadmap case study** — Transforming a worship learning platform into a central hub for worship, team preparation, collaboration, and spiritual growth.
 
 [![Product Strategy](https://img.shields.io/badge/Role-Product%20Strategy-blue)]() [![Timeline](https://img.shields.io/badge/Timeline-24%20Month%20Roadmap-green)]() [![Focus](https://img.shields.io/badge/Focus-B2B%20SaaS-orange)]()
 
@@ -52,7 +52,7 @@ Transform Psallo from a content-rich learning platform into **the operating syst
 
 1. **Mobile Gap:** 60% of worship activity happens mobile (backstage, soundcheck), but platform is desktop-centric
 2. **Collaboration Friction:** 1,480 multi-seat accounts can't coordinate within the platform — forced to use email/Slack/text
-3. **Discovery Overwhelm:** 750+ songs with no intelligent recommendations or personalized onboarding
+3. **Search Overwhelm:** 750+ songs with no intelligent recommendations or personalized onboarding
 4. **Enterprise Readiness:** 80 large accounts (11+ seats) lack admin dashboards, integrations, and SSO
 
 ### Market Opportunity
@@ -290,7 +290,7 @@ Deep analysis of 7,000+ accounts across 4 distinct segments:
 
 🔴 **No mobile-native experience** — Losing engagement during high-intent moments (backstage, rehearsals)  
 🔴 **No team collaboration tools** — Teams forced to coordinate outside the platform  
-🔴 **Content discovery challenges** — 750+ songs overwhelming without personalization  
+🔴 **Content search challenges** — 750+ songs overwhelming without personalization  
 🔴 **Enterprise features missing** — Admin dashboards, SSO, integrations underdeveloped
 
 ### Key Tradeoffs Made
@@ -355,9 +355,9 @@ This case study showcases:
 
 ## 📧 Contact
 
-**Moses [Your Last Name]**  
+**Moses Ondeche**  
 Product Manager | B2B SaaS Strategy  
-[LinkedIn](#) | [Portfolio](#) | [Email](mailto:your.email@example.com)
+[LinkedIn](https://www.linkedin.com/in/moses-ondeche-3a0a5835/ ) | [Portfolio](#) | [Email](moe35wesh@gmail.com)
 
 ---
 
