@@ -121,28 +121,27 @@
             overflow: hidden;
             min-height: 750px;
             max-height: 750px;
+            position: relative;
         }
 
         .screen-content {
             height: 100%;
             overflow-y: auto;
+            overflow-x: hidden;
         }
 
-        /* Scrolled state for After screen */
+        /* Enable smooth scrolling */
+        .screen-content {
+            scroll-behavior: smooth;
+        }
+
+        /* After screen starts scrolled down */
+        .after-screen-wrapper {
+            position: relative;
+        }
+
         .after-screen .screen-content {
-            animation: autoScroll 3s ease-in-out 2s forwards;
-        }
-
-        @keyframes autoScroll {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-30%);
-            }
-            100% {
-                transform: translateY(-15%);
-            }
+            padding-bottom: 100px;
         }
 
         /* Before Screen - Current Psallo interface */
