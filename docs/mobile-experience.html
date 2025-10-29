@@ -990,6 +990,30 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            // Auto-scroll the After screen to show team features
+            window.addEventListener('load', function() {
+                const afterScreen = document.querySelector('.after-screen .screen-content');
+                if (afterScreen) {
+                    // Wait 2 seconds then scroll
+                    setTimeout(function() {
+                        afterScreen.scrollTo({
+                            top: 400,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Scroll back up a bit after 2 seconds to show the feature
+                        setTimeout(function() {
+                            afterScreen.scrollTo({
+                                top: 200,
+                                behavior: 'smooth'
+                            });
+                        }, 2000);
+                    }, 2000);
+                }
+            });
+        </script>
     </div>
 </body>
 </html>
